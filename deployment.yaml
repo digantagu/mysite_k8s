@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: mysite
-        image: digantagu/mysite:28
+        image: digantagu/mysite:32
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
