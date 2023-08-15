@@ -17,6 +17,7 @@ node {
                         sh "cat deployment.yaml"
                         sh "sed -i 's+digantagu/mysite.*+digantagu/mysite:${DOCKERTAG}+g' deployment.yaml"
                         sh "cat deployment.yaml"
+                        sh "git checkout -b main"
                         sh "git add ."
                         sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                         sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/mysite_k8s.git HEAD:main"
